@@ -1,0 +1,69 @@
+package main
+
+import (
+	"flag"
+	"fmt"
+	"github.com/mpetavy/common"
+	"github.com/spyzhov/ajson"
+	"io/ioutil"
+	"os"
+	"strings"
+	"time"
+)
+
+var (
+	f *string
+	q * string
+)
+
+func init() {
+	f = flag.String("f","","file to parse, read STDIN when omitted")
+	q = flag.String("q","","github.com/tidwall/gjson query")
+}
+
+func TrimApostroph(str string) string {
+	s := 0
+	e := len(str)
+	if strings.HasPrefix(str,"\"") {
+		s++
+	}
+	if strings.HasSuffix(str,"\"") {
+		e--
+	}
+
+	return str[s:e]
+}
+
+func run() error {
+	var b []byte
+	var err error
+
+	if *f == "" {
+		b,err = ioutil.ReadAll(os.Stdin)
+	} else {
+		b,err = ioutil.ReadFile(*f)
+	}
+	if err != nil {
+		return err
+	}
+
+	r,err := ajson.JSONPath(b,*q)
+	if err != nil {
+		return err
+	}
+
+	for _, node := range r {
+		fmt.Printf("%s\n",TrimApostroph(node.String()))
+	}
+
+	return nil
+}
+
+func main() {
+	defer common.Cleanup()
+
+	common.NoBanner = true
+
+	common.New(&common.App{"jsonpath", "0.0.1", "2019", "parse and query json", "mpetavy", common.APACHE, "https://github.com/golang/mpetavy/golang/jsonpath", false, nil, nil, nil, run, time.Duration(0)}, nil)
+	common.Run()
+}
