@@ -1,0 +1,1 @@
+curl -X GET --user "$GIT_USERNAME:$GIT_PASSWORD" https://api.github.com/user/repos?per_page=1000 | jsonpath -q "$[?(@.owner.login == 'mpetavy')]".name
