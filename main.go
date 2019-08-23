@@ -8,7 +8,6 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
-	"time"
 )
 
 var (
@@ -17,6 +16,8 @@ var (
 )
 
 func init() {
+	common.Init("jsonpath", "0.0.1", "2019", "parse and query json", "mpetavy", common.APACHE, "https://github.com/golang/mpetavy/golang/jsonpath", false, nil, nil, run, 0)
+
 	f = flag.String("f", "", "file to parse, read STDIN when omitted")
 	q = flag.String("q", "", "github.com/tidwall/gjson query")
 }
@@ -64,6 +65,5 @@ func main() {
 
 	common.NoBanner = true
 
-	common.New(&common.App{"jsonpath", "0.0.1", "2019", "parse and query json", "mpetavy", common.APACHE, "https://github.com/golang/mpetavy/golang/jsonpath", false, nil, nil, run, time.Duration(0)}, nil)
-	common.Run()
+	common.Run(nil)
 }
