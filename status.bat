@@ -8,6 +8,6 @@ for /d %%a in (*.) do (
     echo %%a
     echo.
     cd %%a
-    go install
+    git status
     cd ..
 )
