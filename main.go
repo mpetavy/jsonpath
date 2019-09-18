@@ -16,7 +16,7 @@ var (
 )
 
 func init() {
-	common.Init("jsonpath", "0.0.1", "2019", "parse and query json", "mpetavy", common.APACHE, "https://github.com/golang/mpetavy/golang/jsonpath", false, nil, nil, run, 0)
+	common.Init("0.0.1", "2019", "parse and query json", "mpetavy", common.APACHE, false, nil, nil, run, 0)
 
 	f = flag.String("f", "", "file to parse, read STDIN when omitted")
 	q = flag.String("q", "", "github.com/tidwall/gjson query")
