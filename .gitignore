@@ -1,0 +1,33 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+### Above combination will ignore all files without extension ###
+
+# Ignore files with extension `.class` & `.sm`
+*.exe
+*.dll
+*.so
+*.dylib
+*.log
+*.db
+*.bak
+*.dmp
+*.tmp
+*.class
+*.sm
+*.out
+
+.glide
+.idea
+.vscode
+.rnd
+
+debug
+bin
+target
