@@ -8,7 +8,6 @@ for /d %%a in (*.) do (
     echo %%a
     echo.
     cd %%a
-    go mod tidy
-    go install
+    copy ..\.gitignore . /y
     cd ..
 )
