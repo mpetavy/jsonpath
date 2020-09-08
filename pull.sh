@@ -5,6 +5,6 @@ do
 	echo --------------------------------------------------------------------------
 	echo $dir
 	cd $dir
-	git pull
+	git pull --tags
 	cd ..
 done
