@@ -8,7 +8,7 @@ for /d %%a in (*.) do (
     echo %%a
     echo.
     cd %%a
-	go get github.com/mpetavy/common@v1.1.55
+    go get github.com/mpetavy/common@v1.1.55
     go mod tidy
     go install
     cd ..
