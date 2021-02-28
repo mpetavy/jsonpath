@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/mpetavy/common"
 	"github.com/spyzhov/ajson"
-	"io/ioutil"
+	"io"
 	"os"
 	"strings"
 )
@@ -40,9 +40,9 @@ func run() error {
 	var err error
 
 	if *f == "" {
-		b, err = ioutil.ReadAll(os.Stdin)
+		b, err = io.ReadAll(os.Stdin)
 	} else {
-		b, err = ioutil.ReadFile(*f)
+		b, err = os.ReadFile(*f)
 	}
 	if err != nil {
 		return err
