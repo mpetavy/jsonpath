@@ -16,7 +16,7 @@ var (
 )
 
 func init() {
-	common.Init(false, "0.0.1", "", "2019", "parse and query json", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
+	common.Init(false, "0.0.1", "", "", "2019", "parse and query json", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
 
 	f = flag.String("f", "", "file to parse, read STDIN when omitted")
 	q = flag.String("q", "", "github.com/tidwall/gjson query")
