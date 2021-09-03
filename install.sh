@@ -5,6 +5,7 @@ do
 	echo --------------------------------------------------------------------------
 	echo $dir
 	cd $dir
+	go mod tidy
 	go install
 	cd ..
 done
