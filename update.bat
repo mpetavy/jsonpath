@@ -8,7 +8,7 @@ for /d %%a in (*.) do (
     echo %%a
     echo.
     cd %%a
-    go get github.com/mpetavy/common@v1.1.55
+    go get github.com/mpetavy/common@v1.4.1
     if exist update-vendor.bat call update-vendor.bat
     go mod tidy
     go install
