@@ -1,7 +1,7 @@
 @echo off
 cls
 banner %0
-# pause 
+rem pause 
 go clean -cache
 for /d %%a in (*.) do (
     echo ----------------------------------------------------------------------
