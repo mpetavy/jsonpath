@@ -3,7 +3,7 @@ module github.com/mpetavy/jsonpath
 go 1.19
 
 require (
-	github.com/mpetavy/common v1.5.1
+	github.com/mpetavy/common v1.5.2
 	github.com/spyzhov/ajson v0.4.2
 )
 
