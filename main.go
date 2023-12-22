@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"flag"
 	"fmt"
 	"github.com/mpetavy/common"
@@ -15,8 +16,11 @@ var (
 	q *string
 )
 
+//go:embed go.mod
+var resources embed.FS
+
 func init() {
-	common.Init("jsonpath", "", "", "", "2019", "parse and query json", "mpetavy", fmt.Sprintf("https://github.com/mpetavy/%s", common.Title()), common.APACHE, nil, nil, nil, run, 0)
+	common.Init("", "", "", "", "parse and query json", "", "", "", &resources, nil, nil, run, 0)
 
 	f = flag.String("f", "", "file to parse, read STDIN when omitted")
 	q = flag.String("q", "", "github.com/tidwall/gjson query")
