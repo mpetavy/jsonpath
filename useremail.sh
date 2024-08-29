@@ -1,3 +1,6 @@
+#!/bin/sh
+set -e
+
 # https://stackoverflow.com/questions/3042437/how-to-change-the-commit-author-for-a-single-commit/28845565#28845565
 
 for dir in ./*/     # list directories in the form "/tmp/dirname/"

@@ -1,3 +1,6 @@
+#!/bin/sh
+set -e
+
 [ -f "go.work" ] rm go.work
 
 go work init
