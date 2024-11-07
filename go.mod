@@ -5,7 +5,7 @@ go 1.23
 toolchain go1.23.2
 
 require (
-	github.com/mpetavy/common v1.9.5
+	github.com/mpetavy/common v1.9.6
 	github.com/spyzhov/ajson v0.8.0
 )
 
